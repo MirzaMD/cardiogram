@@ -1,0 +1,7 @@
+fastapi
+uvicorn[standard]
+pyserial
+requests
+python-dotenv
+numpy
+tensorflow==2.21.0

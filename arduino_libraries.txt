@@ -1,0 +1,29 @@
+LifeSenseAI - Arduino UNO libraries
+
+Required / relevant Arduino-side libraries:
+
+1. SparkFun MAX3010x Pulse and Proximity Sensor Library
+   - Used for MAX30102 communication.
+   - Arduino Library Manager name:
+     "SparkFun MAX3010x Pulse and Proximity Sensor Library"
+
+2. Wire
+   - Built into the Arduino AVR core.
+   - Used for I2C communication with MAX30102.
+
+AD8232:
+   - No external Arduino library is required for the AD8232 module.
+   - It outputs an analog ECG signal, normally read with analogRead()
+     from the selected Arduino analog input.
+
+Serial:
+   - Arduino's built-in Serial library is used to send:
+       timestamp,ecg,ir,red
+
+Example:
+    100412,374,33059,30388
+
+Important:
+- The Arduino UNO is responsible for sensor acquisition.
+- The Raspberry Pi communicates with the UNO over USB serial.
+- Python's pyserial package reads that serial stream on the Pi
